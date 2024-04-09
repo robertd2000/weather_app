@@ -32,5 +32,4 @@ export const searchSlice = createSlice({
 });
 
 export const { deleteFromList, clearList } = searchSlice.actions;
-
 export default searchSlice.reducer;
