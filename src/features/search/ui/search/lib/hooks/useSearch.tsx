@@ -15,13 +15,23 @@ export const useSearch = () => {
   const dispatch = useAppDispatch();
   const { error } = useAppSelector((state) => state.search);
 
+  const searchCallback = (text: string) => {
+    if (text.length) {
+      dispatch(fetchSearch({ query: text }));
+      setSearch("");
+    }
+  };
+
+  const handleSetAndSearch = (text: string) => {
+    setSearch(text);
+
+    searchCallback(text);
+  };
+
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (search.length) {
-      dispatch(fetchSearch({ query: search }));
-      setSearch("");
-    }
+    searchCallback(search);
   };
 
   return {
@@ -29,5 +39,6 @@ export const useSearch = () => {
     error,
     handleChange,
     handleSearch,
+    handleSetAndSearch,
   };
 };

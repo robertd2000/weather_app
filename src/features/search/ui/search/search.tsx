@@ -1,8 +1,10 @@
+import { Dropdown } from "../dropdown/dropdown";
 import { useSearch } from "./lib/hooks/useSearch";
 import style from "./search.module.scss";
 
 export const Search = () => {
-  const { search, error, handleChange, handleSearch } = useSearch();
+  const { search, error, handleChange, handleSearch, handleSetAndSearch } =
+    useSearch();
 
   return (
     <section className={style.mainContent}>
@@ -22,6 +24,8 @@ export const Search = () => {
           </fieldset>
         </form>
       </div>
+
+      <Dropdown search={search} handler={handleSetAndSearch} />
 
       <div className={style.error}>{error?.message || ""}</div>
     </section>
