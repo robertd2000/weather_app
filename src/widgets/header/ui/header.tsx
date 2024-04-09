@@ -6,7 +6,7 @@ export const Header = () => {
   return (
     <header className={style.header}>
       <div className={style.wrapper}>
-        <Link to="/weather_app" className={style.title}>
+        <Link to="/" className={style.title}>
           <h2>Прогноз погоды</h2>
         </Link>
         <Search />
