@@ -6,7 +6,7 @@ export const CityList = () => {
   const { cities } = useCityList();
   return (
     <div>
-      {cities.map((city: CityWeather) => {
+      {cities?.map((city: CityWeather) => {
         return <CityForecast cityForecast={city} />;
       })}
     </div>
