@@ -8,7 +8,7 @@ export const searchSlice = createSlice({
 
   reducers: {
     deleteFromList(state, { payload }) {
-      state.cities = state.cities.filter((city) => city.id != payload);
+      state.cities = state.cities.filter((city) => city.foreCastId != payload);
     },
     clearList(state) {
       state.cities = [];
@@ -21,13 +21,26 @@ export const searchSlice = createSlice({
         state.error = null;
       })
       .addCase(fetchSearch.fulfilled, (state, action) => {
-        state.cities = [action.payload, ...state.cities];
+        const foreCastId = Math.floor(Math.random() * 10000);
+        state.cities = [{ ...action.payload, foreCastId }, ...state.cities];
+        // state.cities.push({
+        //   ...action.payload,
+        //   foreCastId,
+        // });
         state.loading = false;
         state.error = null;
       })
       .addCase(fetchSearch.rejected, (state, action) => {
+        console.log("action", action.payload, action.error);
+
         state.loading = false;
-        state.error = action.payload ?? null;
+        if (action?.error?.message?.includes("404")) {
+          console.log("404");
+
+          state.error = { message: "Город не найден", cod: "404" };
+        } else {
+          state.error = action.payload ?? null;
+        }
       }),
 });
 

@@ -12,6 +12,7 @@ export interface CityWeather {
   id: number;
   name: string;
   cod: number;
+  foreCastId: number;
 }
 
 export interface Coord {

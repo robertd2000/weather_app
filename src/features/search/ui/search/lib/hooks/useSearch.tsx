@@ -1,5 +1,8 @@
 import { useState } from "react";
-import { useAppDispatch } from "../../../../../../shared/lib/store/redux";
+import {
+  useAppDispatch,
+  useAppSelector,
+} from "../../../../../../shared/lib/store/redux";
 import { fetchSearch } from "../../../../model/searchThunk";
 
 export const useSearch = () => {
@@ -10,16 +13,20 @@ export const useSearch = () => {
   };
 
   const dispatch = useAppDispatch();
+  const { error } = useAppSelector((state) => state.search);
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    dispatch(fetchSearch({ query: search }));
-    setSearch("");
+    if (search.length) {
+      dispatch(fetchSearch({ query: search }));
+      setSearch("");
+    }
   };
 
   return {
     search,
+    error,
     handleChange,
     handleSearch,
   };

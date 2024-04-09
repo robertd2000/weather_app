@@ -34,7 +34,7 @@ export const CityForecast: FC<CityForecastProps> = ({ cityForecast }) => {
           humidity: cityForecast.main.humidity,
         }}
       />
-      <DeleteFromList id={cityForecast.id.toString()} />
+      <DeleteFromList id={cityForecast.foreCastId.toString()} />
     </div>
   );
 };
