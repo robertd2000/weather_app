@@ -5,7 +5,11 @@ import { initialState } from "./constants";
 export const searchSlice = createSlice({
   name: "search",
   initialState,
-  reducers: {},
+  reducers: {
+    deleteFromList(state, { payload }) {
+      state.cities = state.cities.filter((city) => city.id != payload);
+    },
+  },
   extraReducers: (builder) =>
     builder
       .addCase(fetchSearch.pending, (state) => {
@@ -22,5 +26,7 @@ export const searchSlice = createSlice({
         state.error = action.payload ?? null;
       }),
 });
+
+export const { deleteFromList } = searchSlice.actions;
 
 export default searchSlice.reducer;

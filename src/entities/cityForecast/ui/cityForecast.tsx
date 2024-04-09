@@ -4,6 +4,7 @@ import { CityWeather } from "../../../shared/ui/cityWeather";
 import { CityHeader } from "../../../shared/ui/cityHeader";
 import { CityForecastProps } from "../types/cityForecast.interface";
 import style from "./cityForecast.module.scss";
+import { DeleteFromList } from "../../../features/deleteFromList/ui/deleteFromList";
 
 export const CityForecast: FC<CityForecastProps> = ({ cityForecast }) => {
   return (
@@ -24,6 +25,7 @@ export const CityForecast: FC<CityForecastProps> = ({ cityForecast }) => {
           humidity: 0,
         }}
       />
+      <DeleteFromList id={cityForecast.id.toString()} />
     </div>
   );
 };
