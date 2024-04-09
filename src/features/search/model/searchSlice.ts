@@ -27,7 +27,7 @@ export const searchSlice = createSlice({
         state.cities = [
           {
             ...action.payload.weather,
-            forecast: action.payload.forecast,
+            forecast: action.payload.forecast.list,
             foreCastId,
           },
           ...state.cities,

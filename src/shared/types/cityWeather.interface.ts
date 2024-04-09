@@ -1,8 +1,8 @@
-import { ForecastItemType } from "./forecast.interface";
+import { Forecast, ForecastItemType } from "./forecast.interface";
 
 export interface CityWeatherResponse {
   weather: CityWeather;
-  forecast: ForecastItemType[];
+  forecast: Forecast;
 }
 
 export interface CityWeather {

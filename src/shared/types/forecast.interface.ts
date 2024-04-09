@@ -1,4 +1,4 @@
-export type ForecastItemType = {
+export interface ForecastItemType {
   dt: number;
   main: {
     temp: number;
@@ -9,4 +9,8 @@ export type ForecastItemType = {
     icon: string;
   }>;
   dt_txt: string;
-};
+}
+
+export interface Forecast {
+  list: ForecastItemType[];
+}
