@@ -1,0 +1,38 @@
+.loader {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  width: 30%;
+  text-align: center;
+  margin: 25% auto;
+
+  .one {
+    animation-delay: 0.3s;
+  }
+  .two {
+    animation-delay: 0.4s;
+  }
+  .three {
+    animation-delay: 0.5s;
+  }
+
+  & div {
+    background: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    margin: 0 10px;
+    animation: load 0.7s ease infinite;
+  }
+}
+
+@keyframes load {
+  0% {
+    width: 30px;
+    height: 30px;
+  }
+  50% {
+    width: 20px;
+    height: 20px;
+  }
+}

@@ -4,7 +4,7 @@ import { localStorageController } from "../../shared/lib/localStorage/localStora
 import { CityWeather } from "../../shared/types";
 import { SearchState } from "../../features/search/model/types";
 
-const cities = localStorageController.getItem<CityWeather[]>("cities");
+const cities = localStorageController.getItem<CityWeather[]>("cities") || [];
 
 const store = configureStore({
   preloadedState: {

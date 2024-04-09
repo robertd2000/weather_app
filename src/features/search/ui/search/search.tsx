@@ -2,7 +2,7 @@ import { useSearch } from "./lib/hooks/useSearch";
 import style from "./search.module.scss";
 
 export const Search = () => {
-  const { search, handleChange, handleSearch } = useSearch();
+  const { search, error, handleChange, handleSearch } = useSearch();
 
   return (
     <section className={style.mainContent}>
@@ -22,6 +22,8 @@ export const Search = () => {
           </fieldset>
         </form>
       </div>
+
+      <div className={style.error}>{error?.message || ""}</div>
     </section>
   );
 };
