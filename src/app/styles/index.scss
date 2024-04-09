@@ -1,0 +1,23 @@
+// css-переменные проекта
+@import "./vars.scss";
+// нормализация стилей проекта
+@import "./normalize.scss";
+// классы-утилиты
+// @import "./utils.scss";
+
+body {
+  background: url("../../shared/assets/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin: 0;
+  top: 0;
+  left: 0;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0 15%;
+}
