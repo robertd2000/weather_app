@@ -5,24 +5,33 @@ import { CityHeader } from "../../../shared/ui/cityHeader";
 import { CityForecastProps } from "../types/cityForecast.interface";
 import style from "./cityForecast.module.scss";
 import { DeleteFromList } from "../../../features/deleteFromList/ui/deleteFromList";
+import { getCurrentDate } from "../../../shared/lib/date";
 
 export const CityForecast: FC<CityForecastProps> = ({ cityForecast }) => {
+  const iconUrl = `https://openweathermap.org/img/w/${cityForecast.weather?.[0]?.icon}.png`;
+
+  const date = getCurrentDate();
+
   return (
     <div className={style.cityForecast}>
       <CityHeader
         cityName={cityForecast.name}
-        date={"11111"}
+        date={date}
         countryName={cityForecast.sys.country}
       />
-      <CityWeather iconUrl={""} temperature={10} description={"Rain"} />
+      <CityWeather
+        iconUrl={iconUrl}
+        temperature={cityForecast.main.temp}
+        description={cityForecast?.weather?.[0]?.description}
+      />
       <WeatherMetrics
         metrics={{
-          highestTemp: 0,
-          lowestTemp: 0,
-          wind: 0,
-          sunrise: "",
-          sunset: "",
-          humidity: 0,
+          highestTemp: cityForecast.main.temp_max,
+          lowestTemp: cityForecast.main.temp_min,
+          wind: cityForecast.wind.speed,
+          sunrise: cityForecast.sys.sunrise,
+          sunset: cityForecast.sys.sunset,
+          humidity: cityForecast.main.humidity,
         }}
       />
       <DeleteFromList id={cityForecast.id.toString()} />

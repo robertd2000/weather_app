@@ -6,14 +6,13 @@
 // @import "./utils.scss";
 
 body {
-  background: url("../../shared/assets/bg.jpg");
+  background-image: url("../../shared/assets/bg.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   margin: 0;
   top: 0;
   left: 0;
-  position: absolute;
   height: 100%;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",

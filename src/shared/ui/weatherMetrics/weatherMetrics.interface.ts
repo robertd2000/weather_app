@@ -3,8 +3,8 @@ export interface WeatherMetricsProps {
     highestTemp: number;
     lowestTemp: number;
     wind: number;
-    sunrise: string;
-    sunset: string;
+    sunrise: number;
+    sunset: number;
     humidity: number;
   };
 }
