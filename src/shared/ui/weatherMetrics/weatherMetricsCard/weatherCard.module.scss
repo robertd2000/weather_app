@@ -1,0 +1,15 @@
+.weatherCard {
+  flex-basis: calc(25%);
+  padding: 0.5em 0.5em;
+  text-align: center;
+
+  h4 {
+    padding: 5px 0px;
+    font-weight: 400;
+    font-size: 1.2em;
+  }
+
+  span {
+    font-size: 1em;
+  }
+}

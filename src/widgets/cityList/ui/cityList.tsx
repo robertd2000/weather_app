@@ -1,3 +1,4 @@
+import { CityForecast } from "../../../entities/cityForecast";
 import { useCityList } from "../lib/hooks/useCityList";
 
 export const CityList = () => {
@@ -5,7 +6,7 @@ export const CityList = () => {
   return (
     <div>
       {cities.map((city) => {
-        return city.name;
+        return <CityForecast cityForecast={city} />;
       })}
     </div>
   );

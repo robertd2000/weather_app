@@ -4,7 +4,6 @@ export const HomePage = () => {
   return (
     <div>
       <CityList />
-      home
     </div>
   );
 };
