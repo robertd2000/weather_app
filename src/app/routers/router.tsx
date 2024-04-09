@@ -11,7 +11,7 @@ const routers = createRoutesFromElements(
   <Route
     path="/"
     element={<Layouts />}
-    handle={{ crumb: <Link to="/">Home</Link> }}
+    handle={{ crumb: <Link to="/weather_app">Home</Link> }}
   >
     <Route index element={<HomePage />} />
   </Route>
