@@ -1,0 +1,40 @@
+.cityWeather {
+  flex-basis: 50%;
+  display: grid;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  grid-template-columns: auto 1fr;
+  margin: 10px 0px;
+  gap: 0.5em;
+
+  .cityIcon {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    font-size: 3em;
+    color: rgb(255, 255, 255);
+
+    // img {
+    //   //   width: 100px;
+    // }
+  }
+
+  .temperature {
+    h3 {
+      font-size: 5em;
+      font-weight: 400;
+      color: rgb(255, 255, 255);
+    }
+
+    h4 {
+      font-weight: 400;
+      font-size: 2em;
+      text-align: left;
+      padding: 5px 0px;
+    }
+  }
+}

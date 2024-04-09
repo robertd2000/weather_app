@@ -1,1 +1,0 @@
-export { WeatherInfoCard } from "./weatherInfoCard";
