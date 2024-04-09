@@ -1,12 +1,10 @@
 .cityWeather {
-  flex-basis: 50%;
+  flex-basis: 30%;
   display: grid;
-  -webkit-box-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
   align-items: center;
   grid-template-columns: auto 1fr;
-  margin: 10px 0px;
+  margin: 0px 0px;
   gap: 0.5em;
 
   .cityIcon {
@@ -28,6 +26,7 @@
       font-size: 5em;
       font-weight: 400;
       color: rgb(255, 255, 255);
+      margin: 0;
     }
 
     h4 {
