@@ -19,7 +19,7 @@ export const CityList = () => {
         <div>
           {cities?.length ? (
             cities?.map((city: CityWeather) => {
-              return <CityForecast cityForecast={city} />;
+              return <CityForecast key={city.foreCastId} cityForecast={city} />;
             })
           ) : (
             <h2 className={style.noData}>Нет данных</h2>

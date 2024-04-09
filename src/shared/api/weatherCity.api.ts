@@ -1,12 +1,20 @@
-import { CityWeather } from "../types";
+import { CityWeatherResponse } from "../types";
 import base from "./base";
 
-export const getCityWeather = async (city: string): Promise<CityWeather> => {
-  const { data } = await base.get(`/weather`, {
+export const getCityWeather = async (
+  city: string
+): Promise<CityWeatherResponse> => {
+  const { data: weather } = await base.get(`/weather`, {
     params: {
       q: city,
     },
   });
 
-  return data;
+  const { data: forecast } = await base.get(`/forecast`, {
+    params: {
+      q: city,
+    },
+  });
+
+  return { weather, forecast };
 };

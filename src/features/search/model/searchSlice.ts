@@ -21,12 +21,18 @@ export const searchSlice = createSlice({
         state.error = null;
       })
       .addCase(fetchSearch.fulfilled, (state, action) => {
+        console.log("action", action.payload);
+
         const foreCastId = Math.floor(Math.random() * 10000);
-        state.cities = [{ ...action.payload, foreCastId }, ...state.cities];
-        // state.cities.push({
-        //   ...action.payload,
-        //   foreCastId,
-        // });
+        state.cities = [
+          {
+            ...action.payload.weather,
+            forecast: action.payload.forecast,
+            foreCastId,
+          },
+          ...state.cities,
+        ];
+
         state.loading = false;
         state.error = null;
       })
