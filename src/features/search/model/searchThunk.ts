@@ -1,14 +1,14 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { SearchQuery } from "./types";
 import {
-  CityWeather,
+  CityWeatherResponse,
   ErrorType,
   RejectedDataType,
 } from "../../../shared/types";
 import { getCityWeather } from "../../../shared/api/weatherCity.api";
 
 export const fetchSearch = createAsyncThunk<
-  CityWeather,
+  CityWeatherResponse,
   SearchQuery,
   { readonly rejectValue: RejectedDataType }
 >("cities/fetchSearch", ({ query }, thunkAPI) => {

@@ -1,3 +1,10 @@
+import { Forecast, ForecastItemType } from "./forecast.interface";
+
+export interface CityWeatherResponse {
+  weather: CityWeather;
+  forecast: Forecast;
+}
+
 export interface CityWeather {
   coord: Coord;
   weather: Weather[];
@@ -13,6 +20,7 @@ export interface CityWeather {
   name: string;
   cod: number;
   foreCastId: number;
+  forecast: ForecastItemType[];
 }
 
 export interface Coord {

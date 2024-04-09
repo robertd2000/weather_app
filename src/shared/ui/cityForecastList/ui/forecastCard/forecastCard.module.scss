@@ -1,0 +1,44 @@
+.forecastWrapper {
+  flex-shrink: 0;
+  flex-basis: 100px;
+  padding: 5px;
+  margin: 0 5px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-left: 0;
+  }
+
+  img {
+    display: block;
+    height: 25px;
+    width: 25px;
+    margin: 0 auto;
+  }
+
+  h4 {
+    display: block;
+    font-weight: 400;
+
+    font-size: 20px;
+    text-align: center;
+    padding: 5px 0px;
+    margin: 0;
+  }
+
+  span {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Montserrat, sans-serif;
+    display: block;
+    font-size: 14px;
+    text-align: center;
+  }
+}
