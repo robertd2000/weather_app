@@ -7,7 +7,7 @@ export const CityForecastList: FC<CityForecastProps> = ({ forecast }) => {
   return (
     <div className={style.forecasts}>
       {forecast?.map((i) => (
-        <ForecastCard forecast={i} />
+        <ForecastCard key={i.dt} forecast={i} />
       ))}
     </div>
   );
