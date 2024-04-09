@@ -1,22 +1,8 @@
-import { useState } from "react";
-import { useAppDispatch } from "../../../../shared/lib/store/redux";
-import { fetchSearch } from "../..";
+import { useSearch } from "./lib/hooks/useSearch";
 import style from "./search.module.scss";
 
 export const Search = () => {
-  const [text, setText] = useState<string>("");
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setText(e.target.value);
-  };
-
-  const dispatch = useAppDispatch();
-
-  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    dispatch(fetchSearch({ query: text }));
-  };
+  const { search, handleChange, handleSearch } = useSearch();
 
   return (
     <section className={style.mainContent}>
@@ -24,7 +10,7 @@ export const Search = () => {
         <form onSubmit={handleSearch}>
           <fieldset className={style.fieldInput}>
             <input
-              value={text}
+              value={search}
               onChange={handleChange}
               className={style.input}
               type="text"
