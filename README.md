@@ -9,6 +9,6 @@ __Функционал__:
 
 Сделано на стеке __React (TypeScript) + Redux (toolkit)__. 
 
-В качестве архитектуры выбрал __[FSD](https://feature-sliced.design/ru/docs)__
+В качестве архитектуры выбрал __[FSD](https://feature-sliced.design/ru/docs)__.
 
-Деплой на [GitHub Pages](https://robertd2000.github.io/weather_app/) для теста (также настроил автоматический деплой приложения при push в репозиторий)
+Деплой на [GitHub Pages](https://robertd2000.github.io/weather_app/) для теста.
